@@ -1,5 +1,6 @@
-comandos.txt
+
 services/conf/spark-defaults.conf
 __pycache__/
 .git
 comandos.txt
+mnt/airflow/logs/

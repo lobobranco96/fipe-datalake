@@ -1,8 +1,14 @@
+import airflow
 from airflow import DAG
-from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
 from datetime import datetime
 from airflow.operators.python import PythonOperator
-import airflow
+#from airflow.providers.google.cloud.operators.gcs import GoogleCloudStorageUploadFileOperator
+from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
+from python.extract import extract_app
+
+BUCKET_NAME = "meu-bucket"
+LOCAL_FILE_PATH = "/caminho/para/o/arquivo.txt"
+DESTINATION_BLOB_NAME = "destino/arquivo.txt"
 
 default_args = {
     'owner': 'airflow',
@@ -23,22 +29,43 @@ with DAG(
     catchup=False,
 ) as dag:
     
+#No Airflow Web UI, vá até Admin > Connections.
+#Adicione uma nova conexão:
+#Conn Id: google_cloud_default (ou outro nome de sua escolha).
+#Conn Type: Google Cloud.
+#Configure sua autenticação (chave JSON ou configurações de aplicação).
+
     start = PythonOperator(
         task_id="start",
         python_callable = lambda: print("Jobs started"),
         dag=dag
     )
-    
-    spark_submit_task = SparkSubmitOperator(
-        task_id='spark_submit_task',
-        application='/spark_job/printspark.py',  # Caminho dentro do contêiner do Spark
-        conn_id='spark_default',
-        conf={
-            "spark.executor.memory": "2g",
-            "spark.executor.cores": "2",
-        },
-        verbose=True,
+
+    extract_info = PythonOperator(
+        task_id="extract_info",
+        python_callable = extract_app,
+        dag=dag
     )
+
+    #upload_file = GoogleCloudStorageUploadFileOperator(
+     #   task_id="upload_file_to_gcs",
+      #  bucket_name=BUCKET_NAME,
+       # src=LOCAL_FILE_PATH,
+        #dst=DESTINATION_BLOB_NAME,
+        #gzip=False,  # Coloque como True se desejar compactar o arquivo antes de enviar
+        #google_cloud_storage_conn_id="google_cloud_default",
+    #)
+    
+   # spark_submit_task = SparkSubmitOperator(
+    #    task_id='spark_submit_task',
+     #   application='/spark_job/printspark.py',  # Caminho dentro do contêiner do Spark
+      #  conn_id='spark_default',
+       # conf={
+        #    "spark.executor.memory": "2g",
+        #    "spark.executor.cores": "2",
+        #},
+        #verbose=True,
+    #)
 
     end = PythonOperator(
         task_id="end",
@@ -46,4 +73,4 @@ with DAG(
         dag=dag
     )
 
-    start >> spark_submit_task >> end
+    start >> extract_info >> end#>> upload_file >> spark_submit_task >> end

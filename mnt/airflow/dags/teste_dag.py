@@ -4,7 +4,7 @@ from datetime import datetime
 from airflow.operators.python import PythonOperator
 #from airflow.providers.google.cloud.operators.gcs import GoogleCloudStorageUploadFileOperator
 from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
-from python.extract import extract_app
+from python.teste import extractt_app
 
 BUCKET_NAME = "meu-bucket"
 LOCAL_FILE_PATH = "/caminho/para/o/arquivo.txt"
@@ -42,8 +42,8 @@ with DAG(
     )
 
     extract_info = PythonOperator(
-        task_id="extract_info",
-        python_callable = extract_app,
+        task_id="extractt_info",
+        python_callable = extractt_app,
         dag=dag
     )
 

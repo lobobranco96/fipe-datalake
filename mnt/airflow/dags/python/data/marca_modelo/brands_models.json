@@ -1,0 +1,928 @@
+[
+    {
+        "Brand": "abarth",
+        "Model": [
+            "124-spider",
+            "1000-gt-coupe",
+            "1500-coupe",
+            "simca-2000"
+        ]
+    },
+    {
+        "Brand": "ac-cars",
+        "Model": [
+            "predefinição:ac-cars",
+            "ac-cars-2-litre",
+            "ac-ace",
+            "ac-aceca",
+            "ac-cobra",
+            "ac-frua"
+        ]
+    },
+    {
+        "Brand": "acura",
+        "Model": [
+            "cdx",
+            "csx",
+            "legend",
+            "rlx",
+            "vigor"
+        ]
+    },
+    {
+        "Brand": "adamo",
+        "Model": [
+            "crx"
+        ]
+    },
+    {
+        "Brand": "adler",
+        "Model": [
+            "2-liter",
+            "2.5-litre"
+        ]
+    },
+    {
+        "Brand": "aec",
+        "Model": [
+            "ônibus-da-aec(2-p)"
+        ]
+    },
+    {
+        "Brand": "agrale",
+        "Model": [
+            "linha-4000",
+            "linha-a",
+            "am-41",
+            "elefantre-30.0",
+            "marrua",
+            "linha-s"
+        ]
+    },
+    {
+        "Brand": "alexander-dennis",
+        "Model": [
+            "ônibus-da-alexander-dennis(1-p)",
+            "caminhões-da-alexander-dennis(1-p)"
+        ]
+    },
+    {
+        "Brand": "alvis",
+        "Model": [
+            "12/50",
+            "fv101-scorpion",
+            "salamander",
+            "ta-21"
+        ]
+    },
+    {
+        "Brand": "am-general",
+        "Model": [
+            "hmmwv"
+        ]
+    },
+    {
+        "Brand": "amilcar",
+        "Model": [
+            "c4",
+            "cc"
+        ]
+    },
+    {
+        "Brand": "ansaldo",
+        "Model": [
+            "veiculos-militares-da-ansaldo(6-p)"
+        ]
+    },
+    {
+        "Brand": "armstrong-siddeley",
+        "Model": [
+            "armstrong-siddeley-hurricane",
+            "armstrong-siddeley-sapphire"
+        ]
+    },
+    {
+        "Brand": "aro",
+        "Model": [
+            "24-series",
+            "10",
+            "240",
+            "dragon",
+            "m461"
+        ]
+    },
+    {
+        "Brand": "artega",
+        "Model": [
+            "gt"
+        ]
+    },
+    {
+        "Brand": "ascari",
+        "Model": [
+            "a10",
+            "ecosse",
+            "fgt",
+            "kz1"
+        ]
+    },
+    {
+        "Brand": "asüna",
+        "Model": [
+            "asüna",
+            "se",
+            "sunfire",
+            "sunrunner"
+        ]
+    },
+    {
+        "Brand": "austin-healey",
+        "Model": [
+            "100",
+            "3000"
+        ]
+    },
+    {
+        "Brand": "autozam",
+        "Model": [
+            "az-1",
+            "az-3",
+            "mazda-carol",
+            "revue"
+        ]
+    },
+    {
+        "Brand": "bandini",
+        "Model": [
+            "predefinição:automobili",
+            "saloncino"
+        ]
+    },
+    {
+        "Brand": "bedford",
+        "Model": [
+            "ônibus-da-bedford(2-p)"
+        ]
+    },
+    {
+        "Brand": "belaz",
+        "Model": [
+            "75710"
+        ]
+    },
+    {
+        "Brand": "benz",
+        "Model": [
+            "veiculos-benz(vazia)"
+        ]
+    },
+    {
+        "Brand": "bizzarrini",
+        "Model": [
+            "p538/p538s"
+        ]
+    },
+    {
+        "Brand": "bond-cars",
+        "Model": [
+            "bond-minicar"
+        ]
+    },
+    {
+        "Brand": "borgward",
+        "Model": [
+            "b-3000",
+            "hansa-1500",
+            "hansa-2400",
+            "isabella",
+            "p100"
+        ]
+    },
+    {
+        "Brand": "brabham",
+        "Model": [
+            "carros-de-formula-1-da-brabham(20-p)"
+        ]
+    },
+    {
+        "Brand": "brasinca",
+        "Model": [
+            "4200-gt"
+        ]
+    },
+    {
+        "Brand": "brilliance-auto",
+        "Model": [
+            "brilliance-bs6",
+            "brilliance-fsv",
+            "brilliance-v3"
+        ]
+    },
+    {
+        "Brand": "bristol-cars",
+        "Model": [
+            "bristol-400"
+        ]
+    },
+    {
+        "Brand": "caterham",
+        "Model": [
+            "carros-de-formula-1-da-caterham(1-p)",
+            "carros-de-formula-1-da-lotus-racing(4-p)"
+        ]
+    },
+    {
+        "Brand": "checker",
+        "Model": [
+            "aerobus"
+        ]
+    },
+    {
+        "Brand": "daimler",
+        "Model": [
+            "250",
+            "ferret-armoured-car",
+            "jaguar-420",
+            "super-8"
+        ]
+    },
+    {
+        "Brand": "daimler-chrysler",
+        "Model": [
+            "veiculos-da-chrysler(6-c,-34-p)",
+            "veiculos-da-dodge(1-c,-52-p)",
+            "veiculos-da-mitsubishi-fuso(1-p)",
+            "veiculos-da-maybach(5-p)",
+            "veiculos-da-mercedes-benz(5-c,-49-p)",
+            "veiculos-da-smart(5-p)"
+        ]
+    },
+    {
+        "Brand": "de-tomaso",
+        "Model": [
+            "de-tomaso-deauville",
+            "de-tomaso-guarà",
+            "de-tomaso-longchamp",
+            "de-tomaso-mangusta",
+            "de-tomaso-pantera",
+            "de-tomaso-vallelunga"
+        ]
+    },
+    {
+        "Brand": "delage",
+        "Model": [
+            "d6"
+        ]
+    },
+    {
+        "Brand": "delahaye",
+        "Model": [
+            "134"
+        ]
+    },
+    {
+        "Brand": "duesenberg",
+        "Model": [
+            "model-a"
+        ]
+    },
+    {
+        "Brand": "eagle",
+        "Model": []
+    },
+    {
+        "Brand": "effa",
+        "Model": [
+            "m100"
+        ]
+    },
+    {
+        "Brand": "ẽfini",
+        "Model": [
+            "mpv",
+            "ms-6",
+            "ms-9",
+            "rx-7"
+        ]
+    },
+    {
+        "Brand": "eunos",
+        "Model": [
+            "30x",
+            "100",
+            "300",
+            "cosmo",
+            "presso",
+            "roadster"
+        ]
+    },
+    {
+        "Brand": "facel-vega",
+        "Model": [
+            "facel-vega-excellence"
+        ]
+    },
+    {
+        "Brand": "ford",
+        "Model": [
+            "7y",
+            "1941",
+            "activa",
+            "aerostar",
+            "anglia",
+            "aspire",
+            "bantam",
+            "belina",
+            "bronco",
+            "bronco-ii",
+            "bronco-sport",
+            "c-max",
+            "c-max-energi",
+            "capri",
+            "comuta",
+            "consul",
+            "contour",
+            "corcel",
+            "corsair",
+            "cortina",
+            "cougar",
+            "country-squire",
+            "courier",
+            "crown-victoria",
+            "crown-victoria-police-interceptor",
+            "cx",
+            "del-rey",
+            "e-series",
+            "econoline",
+            "econovan",
+            "ecosport",
+            "edge",
+            "eifel",
+            "elite",
+            "escape",
+            "escort",
+            "escort",
+            "escort",
+            "escort",
+            "everest",
+            "excursion",
+            "exp",
+            "expedition",
+            "explorer",
+            "f-250",
+            "f-1000",
+            "f-series",
+            "fairlane",
+            "fairlane",
+            "falcon",
+            "falcon",
+            "falcon",
+            "falcon",
+            "festiva",
+            "fiesta",
+            "fiesta-mark-3",
+            "five-hundred",
+            "focus",
+            "focus-rs-wrc",
+            "f-75",
+            "model-y",
+            "forty-nine",
+            "freestar",
+            "freestyle",
+            "fusion",
+            "fusion-hybrid",
+            "futura",
+            "galaxie",
+            "galaxy",
+            "granada",
+            "granada",
+            "gt",
+            "gt40",
+            "gt90",
+            "ikon",
+            "indigo",
+            "ka",
+            "köln",
+            "kuga",
+            "laser",
+            "ltd",
+            "ltd",
+            "ltd-crown-victoria",
+            "mainline",
+            "maverick",
+            "maverick",
+            "meteor",
+            "model-48",
+            "model-a",
+            "model-a",
+            "model-a",
+            "model-b",
+            "model-c",
+            "model-f",
+            "model-k",
+            "model-n",
+            "model-r",
+            "model-s",
+            "model-t",
+            "model-u",
+            "mondeo",
+            "mustang",
+            "mustang-mach-e",
+            "mustang-shelby-gt500",
+            "nucleon",
+            "orion",
+            "pampa",
+            "parklane",
+            "pilot",
+            "pinto",
+            "popular",
+            "prefect",
+            "probe",
+            "puma",
+            "quadriciclo-de-ford",
+            "ranch-wagon",
+            "ranchero",
+            "ranger",
+            "rheinland",
+            "royale",
+            "rural-willys",
+            "s-max",
+            "scorpio",
+            "shelby-gr-1",
+            "sierra",
+            "squire",
+            "taunus",
+            "taurus",
+            "taurus",
+            "taurus-x",
+            "telstar",
+            "tempo",
+            "territory",
+            "th!nk",
+            "thunderbird",
+            "torino",
+            "transit",
+            "transit-connect",
+            "vedette",
+            "verona",
+            "versailles",
+            "verve-concept",
+            "windstar",
+            "zephyr"
+        ]
+    },
+    {
+        "Brand": "foton",
+        "Model": [
+            "citytruck-10-16",
+            "toano",
+            "view-traveller"
+        ]
+    },
+    {
+        "Brand": "fpv",
+        "Model": [
+            "f6"
+        ]
+    },
+    {
+        "Brand": "fsm",
+        "Model": [
+            "polski-fiat-126p",
+            "fso-syrena"
+        ]
+    },
+    {
+        "Brand": "fso",
+        "Model": [
+            "polonez",
+            "polski-fiat-125p",
+            "syrena",
+            "warszawa"
+        ]
+    },
+    {
+        "Brand": "geely",
+        "Model": [
+            "veiculos-da-volvo(1-c,-19-p)"
+        ]
+    },
+    {
+        "Brand": "glas",
+        "Model": [
+            "1004",
+            "1700",
+            "goggomobil",
+            "gt",
+            "isar",
+            "v8"
+        ]
+    },
+    {
+        "Brand": "great-wall-motors",
+        "Model": [
+            "great-wall-hover"
+        ]
+    },
+    {
+        "Brand": "gumpert",
+        "Model": [
+            "apollo"
+        ]
+    },
+    {
+        "Brand": "hafei",
+        "Model": [
+            "ruiyi",
+            "saibao",
+            "zhongyi",
+            "lobo",
+            "start"
+        ]
+    },
+    {
+        "Brand": "hennessey-performance-engineering",
+        "Model": [
+            "hennessey-venom-f5",
+            "hennessey-venom-gt"
+        ]
+    },
+    {
+        "Brand": "hillman",
+        "Model": [
+            "avenger"
+        ]
+    },
+    {
+        "Brand": "hotchkiss",
+        "Model": [
+            "anjou",
+            "h35"
+        ]
+    },
+    {
+        "Brand": "hsv",
+        "Model": [
+            "clubsport",
+            "vxr"
+        ]
+    },
+    {
+        "Brand": "hudson",
+        "Model": [
+            "hornet",
+            "wasp",
+            "metropolitan",
+            "nash-metropolitan"
+        ]
+    },
+    {
+        "Brand": "hummer",
+        "Model": [
+            "h1",
+            "h2",
+            "h3",
+            "h3t",
+            "hx-concept"
+        ]
+    },
+    {
+        "Brand": "international-harvester",
+        "Model": [
+            "international-harvester-travelall"
+        ]
+    },
+    {
+        "Brand": "iveco",
+        "Model": [
+            "caminhões-da-iveco(3-p)",
+            "veiculos-militares-da-iveco(5-p)"
+        ]
+    },
+    {
+        "Brand": "jac-motors",
+        "Model": [
+            "jac-j2",
+            "jac-j3",
+            "jac-j5",
+            "jac-j6",
+            "jac-t6",
+            "jac-t40"
+        ]
+    },
+    {
+        "Brand": "koenigsegg",
+        "Model": [
+            "agera",
+            "cc8s",
+            "ccr",
+            "ccx",
+            "jesko",
+            "regera"
+        ]
+    },
+    {
+        "Brand": "komatsu",
+        "Model": [
+            "lav"
+        ]
+    },
+    {
+        "Brand": "ktm",
+        "Model": [
+            "x-bow"
+        ]
+    },
+    {
+        "Brand": "lagonda",
+        "Model": [
+            "2.6-litre",
+            "16/80"
+        ]
+    },
+    {
+        "Brand": "leyland",
+        "Model": [
+            "veiculos-da-aec(1-c,-4-p)"
+        ]
+    },
+    {
+        "Brand": "liebherr",
+        "Model": [
+            "a-900-c-litronic-/-a-904-c-litronic",
+            "r-9250",
+            "t282b"
+        ]
+    },
+    {
+        "Brand": "lifan",
+        "Model": [
+            "320",
+            "620",
+            "foison",
+            "lf520",
+            "x60",
+            "x80"
+        ]
+    },
+    {
+        "Brand": "lobini",
+        "Model": [
+            "h1"
+        ]
+    },
+    {
+        "Brand": "man",
+        "Model": [
+            "lion's-city"
+        ]
+    },
+    {
+        "Brand": "manom",
+        "Model": [
+            "manocar"
+        ]
+    },
+    {
+        "Brand": "marcos",
+        "Model": [
+            "mantis-gt",
+            "mini-marcos"
+        ]
+    },
+    {
+        "Brand": "mastretta",
+        "Model": [
+            "mxt"
+        ]
+    },
+    {
+        "Brand": "matra",
+        "Model": [
+            "bagheera",
+            "rancho"
+        ]
+    },
+    {
+        "Brand": "maybach",
+        "Model": [
+            "57",
+            "62",
+            "62-landaulet",
+            "exelero",
+            "57-e-62"
+        ]
+    },
+    {
+        "Brand": "mazdaspeed",
+        "Model": [
+            "mazdaspeed6",
+            "mx-5"
+        ]
+    },
+    {
+        "Brand": "mclaren",
+        "Model": [
+            "carros-de-formula-1-da-mclaren(53-p)"
+        ]
+    },
+    {
+        "Brand": "messerschmitt",
+        "Model": [
+            "kr175",
+            "kr200"
+        ]
+    },
+    {
+        "Brand": "mini",
+        "Model": []
+    },
+    {
+        "Brand": "mitsubishi-fuso",
+        "Model": [
+            "mitsubishi-fuso-canter"
+        ]
+    },
+    {
+        "Brand": "nash-motors",
+        "Model": [
+            "nash-metropolitan",
+            "nash-rambler",
+            "nash-healey"
+        ]
+    },
+    {
+        "Brand": "navistar-international",
+        "Model": [
+            "international-9800i",
+            "international-durastar"
+        ]
+    },
+    {
+        "Brand": "nsu",
+        "Model": [
+            "ro-80"
+        ]
+    },
+    {
+        "Brand": "oshkosh",
+        "Model": [
+            "m-atv",
+            "l-atv"
+        ]
+    },
+    {
+        "Brand": "pagani",
+        "Model": [
+            "huayra",
+            "zonda"
+        ]
+    },
+    {
+        "Brand": "panoz",
+        "Model": [
+            "abruzzi",
+            "esperante-gtr-1",
+            "lmp-1-roadster-s"
+        ]
+    },
+    {
+        "Brand": "pegaso",
+        "Model": [
+            "ii-z-203"
+        ]
+    },
+    {
+        "Brand": "peterbilt",
+        "Model": [
+            "348"
+        ]
+    },
+    {
+        "Brand": "plymouth",
+        "Model": []
+    },
+    {
+        "Brand": "prince",
+        "Model": [
+            "nissan-cherry",
+            "gloria",
+            "nissan-homer",
+            "nissan-r380",
+            "nissan-skyline"
+        ]
+    },
+    {
+        "Brand": "qoros",
+        "Model": [
+            "3"
+        ]
+    },
+    {
+        "Brand": "rambler",
+        "Model": [
+            "veiculos-da-amc(1-c,-16-p)",
+            "veiculos-da-hudson(4-p)",
+            "veiculos-da-nash-motors(3-p)"
+        ]
+    },
+    {
+        "Brand": "reliant",
+        "Model": [
+            "predefinição:reliant",
+            "regal",
+            "robin"
+        ]
+    },
+    {
+        "Brand": "roewe",
+        "Model": [
+            "roewe"
+        ]
+    },
+    {
+        "Brand": "rootes",
+        "Model": [
+            "veiculos-da-hillman(1-p)",
+            "veiculos-da-sunbeam(1-p)"
+        ]
+    },
+    {
+        "Brand": "ruf",
+        "Model": [
+            "ctr",
+            "ctr2",
+            "rgt",
+            "btr",
+            "r-kompressor",
+            "rturbo"
+        ]
+    },
+    {
+        "Brand": "scion",
+        "Model": [
+            "hako",
+            "iq",
+            "tc",
+            "xa",
+            "xb",
+            "xd"
+        ]
+    },
+    {
+        "Brand": "shelby",
+        "Model": [
+            "veiculos-shelby(vazia)"
+        ]
+    },
+    {
+        "Brand": "smart",
+        "Model": [
+            "forfour",
+            "formore",
+            "fortwo",
+            "fortwo-ev",
+            "roadster"
+        ]
+    },
+    {
+        "Brand": "spyker",
+        "Model": [
+            "c12-zagato",
+            "c8"
+        ]
+    },
+    {
+        "Brand": "ssc-north-america",
+        "Model": [
+            "ssc-tuatara"
+        ]
+    },
+    {
+        "Brand": "studebaker",
+        "Model": [
+            "avanti",
+            "champion",
+            "commander",
+            "t27-(veiculo-blindado)"
+        ]
+    },
+    {
+        "Brand": "sunbeam",
+        "Model": [
+            "tiger"
+        ]
+    },
+    {
+        "Brand": "tac",
+        "Model": [
+            "stark"
+        ]
+    },
+    {
+        "Brand": "triumph",
+        "Model": [
+            "tr6"
+        ]
+    }
+]

@@ -4,7 +4,11 @@ from datetime import datetime
 from airflow.operators.python import PythonOperator
 #from airflow.providers.google.cloud.operators.gcs import GoogleCloudStorageUploadFileOperator
 from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
-from python.teste import extractt_app
+#from python.teste import extractt_app
+from python.extract_one import extract_one
+from python.extract_two import extract_two
+from python.extract_three import last_extract
+
 
 BUCKET_NAME = "meu-bucket"
 LOCAL_FILE_PATH = "/caminho/para/o/arquivo.txt"
@@ -21,9 +25,9 @@ default_args = {
 spark_master = "spark://spark:7077"
 
 with DAG(
-    'spark_submit_example',
+    'extract_dag',
     default_args=default_args,
-    description='Submit a job to Spark cluster',
+    description='extraindo dados de veiculos com suas tabelas fipe',
     schedule_interval=None,
     start_date=datetime(2023, 12, 1),
     catchup=False,
@@ -41,11 +45,23 @@ with DAG(
         dag=dag
     )
 
-    extract_info = PythonOperator(
-        task_id="extractt_info",
-        python_callable = extractt_app,
+    first_extract = PythonOperator(
+        task_id="primeira_parte",
+        python_callable = extract_one,
         dag=dag
     )
+
+    second_extract = PythonOperator(
+        task_id="segunda_parte",
+        python_callable = extract_two,
+        dag=dag
+    )
+    preparing_fipe_data = PythonOperator(
+        task_id="preparing_fipe_data",
+        python_callable = last_extract,
+        dag=dag
+    )
+
 
     #upload_file = GoogleCloudStorageUploadFileOperator(
      #   task_id="upload_file_to_gcs",
@@ -73,4 +89,4 @@ with DAG(
         dag=dag
     )
 
-    start >> extract_info >> end#>> upload_file >> spark_submit_task >> end
+    start >> first_extract >> second_extract >> preparing_fipe_data >> end #>> upload_file >> spark_submit_task >> end

@@ -3,6 +3,7 @@ apache-airflow==2.9.2
 apache-airflow-providers-apache-spark
 pyspark
 findspark
-apache-airflow-providers-google
+#apache-airflow-providers-google
 requests
 beautifulsoup4
+google-cloud-storage

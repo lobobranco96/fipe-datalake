@@ -4,3 +4,4 @@ __pycache__/
 .git
 comandos.txt
 mnt/airflow/logs/
+mnt/airflow/dags/credential/google_credential.json

@@ -51,7 +51,11 @@ with DAG(
         conf={
             "spark.executor.memory": "2g",
             "spark.executor.cores": "2",
-            "spark.hadoop.google.cloud.auth.service.account.json.keyfile": "/opt/airflow/dags/credential/google_credential.json",
+            #"spark.hadoop.google.cloud.auth.service.account.json.keyfile": "/opt/airflow/dags/credential/google_credential.json",
+            "spark.jars": "/opt/airflow/dags/credential/gcs-connector-hadoop3-2.2.6-shaded.jar",
+            "spark.hadoop.fs.gs.impl": "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem",
+            "spark.hadoop.google.cloud.auth.service.account.enable": "true"
+           # "spark.hadoop.google.cloud.auth.service.account.json.keyfile", "/opt/airflow/credential/google_credential.json"
         },
         verbose=True,
     )

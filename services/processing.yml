@@ -43,6 +43,7 @@ services:
       - SPARK_USER=spark
     volumes:
       - ../mnt/spark_job:/spark_job/
+      - ../credentials:/credentials/
     ports:
       - "9090:8080"
       - "7077:7077"

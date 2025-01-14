@@ -7,11 +7,6 @@ if __name__ == "__main__":
     conf = (
     pyspark.SparkConf()
     .set("spark.master", "spark://spark-master:7077")
-    .set("spark.jars", "/opt/bitnami/spark/jars/gcs-connector-hadoop3-2.2.2-shaded.jar")#https://storage.googleapis.com/hadoop-lib/gcs/gcs-connector-hadoop3-latest.jar")
-    .set("spark.hadoop.fs.gs.impl", "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem")
-    .set("spark.hadoop.google.cloud.auth.service.account.enable", "true")
-    .set("spark.hadoop.google.cloud.auth.service.account.json.keyfile", "/opt/airflow/credential/google_credential.json") \
-    .set("spark.jars", "https://storage.googleapis.com/hadoop-lib/gcs/gcs-connector-hadoop3-latest.jar") \
     )
 
     spark = SparkSession.builder \
@@ -20,8 +15,6 @@ if __name__ == "__main__":
     .getOrCreate()
     spark.sparkContext.setLogLevel("ERROR")
 
-    #.config("spark.jars", "/opt/bitnami/spark/jars/gcs-connector-hadoop3-latest.jar") \
-    #.config("spark.hadoop.google.cloud.auth.service.account.json.keyfile", "/opt/airflow/dags/credential/google_credential.json") \
    # Defina o esquema
     schema = StructType([
         StructField("brand", StringType(), True),
@@ -32,7 +25,7 @@ if __name__ == "__main__":
         StructField("fipe_price", StringType(), True)
     ])
     #print(spark)
-    df = spark.read.csv("gs://lobobranco-datalake/raw/acura_fipe.csv", header=True, inferSchema=True)
+    df = spark.read.option("header", True).csv("gs://lobobranco-datalake/raw/acura_fipe.csv")
 
     # Mostra o DataFrame
     #df.show()

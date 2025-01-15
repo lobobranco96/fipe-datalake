@@ -42,7 +42,7 @@ def extract_three(brand):
 
         """Busca os modelos de um veículo para um ano específico"""
         key = f"{brand}/{model}/{vehicle_year}"
-        url = f"https://www.webmotors.com.br/tabela-fipe/carros/{key}"
+        "URL REMOVIDO"
 
         max_retries = 3  # Número máximo de tentativas
         attempt = 0  # Contador de tentativas
@@ -142,7 +142,7 @@ def extract_three(brand):
         """
 
         """Cria a URL do veículo"""
-        url = f"https://www.webmotors.com.br/tabela-fipe/carros/{brand}/{model}/{year}/{car_detail}/rj"
+        "URL REMOVIDO"
         return url
 
     caminho_diretorio = "/opt/airflow/dags/python/data/segunda_parte"

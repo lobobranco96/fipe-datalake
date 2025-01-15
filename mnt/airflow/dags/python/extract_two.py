@@ -8,7 +8,6 @@ import time
 HEADERS = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36",
         "Accept-Language": "en-US,en;q=0.9,pt-BR;q=0.8,pt;q=0.7",
-        "Referer": "https://www.webmotors.com.br",
         "Connection": "keep-alive"
     }
 
@@ -39,7 +38,7 @@ def extract_two():
         Retorna:
             list: Lista de anos de fabricação disponíveis para o modelo.
         """
-        url = f"https://www.webmotors.com.br/tabela-fipe/carros/{brand}/{model}"
+        """ URL REMOVIDO"""
         try:
             response = session.get(url)
             if response.status_code == 401:

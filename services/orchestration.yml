@@ -16,13 +16,12 @@ x-airflow-common: &airflow-common
     AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
     AIRFLOW__API__AUTH_BACKENDS: 'airflow.api.auth.backend.basic_auth,airflow.api.auth.backend.session'
     AIRFLOW__SCHEDULER__ENABLE_HEALTH_CHECK: 'true'
-  env_file:
-    - ./conf/.credentials.conf
   volumes:
     - ../mnt/airflow/dags:/opt/airflow/dags
     - ../mnt/airflow/logs:/opt/airflow/logs
     - ../mnt/airflow/config:/opt/airflow/config
     - ../mnt/airflow/plugins:/opt/airflow/plugins
+    - ../mnt/airflow/python:/opt/airflow/python
     - ../mnt/spark_job:/spark_job
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:

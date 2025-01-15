@@ -51,11 +51,22 @@ with DAG(
         conf={
             "spark.executor.memory": "2g",
             "spark.executor.cores": "2",
-            #"spark.hadoop.google.cloud.auth.service.account.json.keyfile": "/opt/airflow/dags/credential/google_credential.json",
-            "spark.jars": "/opt/airflow/dags/credential/gcs-connector-hadoop3-2.2.6-shaded.jar",
+            "spark.jars": "/opt/airflow/dags/jars/gcs-connector-hadoop3-2.2.6-shaded.jar",
             "spark.hadoop.fs.gs.impl": "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem",
             "spark.hadoop.google.cloud.auth.service.account.enable": "true"
-           # "spark.hadoop.google.cloud.auth.service.account.json.keyfile", "/opt/airflow/credential/google_credential.json"
+        },
+        verbose=True,
+    )
+    load_snowflak_schema_in_curated = SparkSubmitOperator(
+        task_id='load_snowflak_schema_in_curated',
+        application='/spark_job/load_snowflake_schema_curated.py',  
+        conn_id='spark_default',
+        conf={
+            "spark.executor.memory": "2g",
+            "spark.executor.cores": "2",
+            "spark.jars": "/opt/airflow/dags/jars/gcs-connector-hadoop3-2.2.6-shaded.jar",
+            "spark.hadoop.fs.gs.impl": "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem",
+            "spark.hadoop.google.cloud.auth.service.account.enable": "true"
         },
         verbose=True,
     )
@@ -65,4 +76,4 @@ with DAG(
        python_callable = lambda: print("Jobs completed successfully"),
        dag=dag
     )
-    start >> data_ingestion >> spark_submit_task >> end
+    start >> data_ingestion >> spark_submit_task >> load_snowflak_schema_in_curated >> end

@@ -3,6 +3,7 @@ x-common-log-config: &default_config
     - lakehouse_network
   env_file:
     - ./conf/.credentials.conf
+    - .env
   healthcheck:
     test: [ "CMD", "ls" ]
     timeout: 45s

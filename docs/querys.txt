@@ -1,0 +1,274 @@
+BIGQUERY consultas
+
+1- O veiculo mais caro por cada marca 
+
+WITH ranked_vehicles AS (
+    SELECT 
+        bd.brand,
+        mhd.model,
+        fpf.fipe_price,
+        ROW_NUMBER() OVER (PARTITION BY bd.brand ORDER BY fpf.fipe_price DESC) AS rank
+    FROM 
+        `semiotic-method-446214-n0.datalake.fipe_price_fact` fpf
+    JOIN 
+        `semiotic-method-446214-n0.datalake.model_vehicle_dim` mhd 
+        ON fpf.id_model_vehicle = mhd.id_model_vehicle
+    JOIN 
+        `semiotic-method-446214-n0.datalake.brand_dim` bd 
+        ON mhd.id_brand = bd.id_brand
+)
+SELECT 
+    brand, 
+    model, 
+    fipe_price AS highest_price
+FROM 
+    ranked_vehicles
+WHERE 
+    rank = 1
+ORDER BY 
+    highest_price DESC;
+
+
+2 - Top 10 veiculos mais caros
+
+SELECT 
+    bd.brand,
+    mhd.model,
+    yd.year,
+    fpf.fipe_price AS highest_price
+FROM 
+    `semiotic-method-446214-n0.datalake.fipe_price_fact` fpf
+JOIN 
+    `semiotic-method-446214-n0.datalake.model_vehicle_dim` mhd 
+    ON fpf.id_model_vehicle = mhd.id_model_vehicle
+JOIN 
+    `semiotic-method-446214-n0.datalake.brand_dim` bd 
+    ON mhd.id_brand = bd.id_brand
+JOIN 
+    `semiotic-method-446214-n0.datalake.year_dim` yd
+    ON fpf.id_year = yd.id_year
+ORDER BY 
+    fpf.fipe_price DESC
+LIMIT 10;
+
+
+
+3 - Os veiculos mais baratos por cada marca e o ano
+
+WITH ranked_vehicles AS (
+    SELECT 
+        bd.brand,
+        mhd.model,
+        yd.year,
+        fpf.fipe_price,
+        ROW_NUMBER() OVER (PARTITION BY bd.brand ORDER BY fpf.fipe_price ASC) AS rank
+    FROM 
+        `semiotic-method-446214-n0.datalake.fipe_price_fact` fpf
+    JOIN 
+        `semiotic-method-446214-n0.datalake.model_vehicle_dim` mhd 
+        ON fpf.id_model_vehicle = mhd.id_model_vehicle
+    JOIN 
+        `semiotic-method-446214-n0.datalake.brand_dim` bd 
+        ON mhd.id_brand = bd.id_brand
+    JOIN 
+        `semiotic-method-446214-n0.datalake.year_dim` yd
+        ON fpf.id_year = yd.id_year
+)
+SELECT 
+    brand,
+    model,
+    year,
+    fipe_price AS lowest_price
+FROM 
+    ranked_vehicles
+WHERE 
+    rank = 1
+ORDER BY 
+    lowest_price ASC;
+
+
+4 - Modelos de veiculos com os preços de 2023 e 2024, além da porcentagem de aumento de preço de um ano para o outro, ordenado pela maior variação.
+
+WITH comparacao_preco AS (
+    SELECT 
+        bd.brand,
+        mhd.model,
+        mhd.car_detail,
+        yd1.year AS year_1,
+        fpf1.fipe_price AS price_1,
+        yd2.year AS year_2,
+        fpf2.fipe_price AS price_2
+    FROM 
+        `semiotic-method-446214-n0.datalake.fipe_price_fact` fpf1
+    JOIN 
+        `semiotic-method-446214-n0.datalake.model_vehicle_dim` mhd 
+        ON fpf1.id_model_vehicle = mhd.id_model_vehicle
+    JOIN 
+        `semiotic-method-446214-n0.datalake.brand_dim` bd 
+        ON mhd.id_brand = bd.id_brand
+    JOIN 
+        `semiotic-method-446214-n0.datalake.year_dim` yd1
+        ON fpf1.id_year = yd1.id_year
+    JOIN 
+        `semiotic-method-446214-n0.datalake.fipe_price_fact` fpf2
+        ON fpf1.id_model_vehicle = fpf2.id_model_vehicle
+    JOIN 
+        `semiotic-method-446214-n0.datalake.year_dim` yd2
+        ON fpf2.id_year = yd2.id_year
+    WHERE 
+        yd1.year = 2023 AND yd2.year = 2024
+)
+SELECT 
+    brand,
+    model,
+    car_detail,
+    year_1,
+    price_1,
+    year_2,
+    price_2,
+    ROUND(((price_2 - price_1) / price_1) * 100, 2) AS porcentagem_aumento_preço
+FROM 
+    comparacao_preco
+ORDER BY 
+    porcentagem_aumento_preço DESC;
+
+5- Modelo mais caro de cada ano
+
+WITH ranked_vehicles AS (
+    SELECT 
+        bd.brand,
+        mhd.model,
+        mhd.car_detail,
+        yd.year,
+        fpf.fipe_price,
+        ROW_NUMBER() OVER (PARTITION BY yd.year ORDER BY fpf.fipe_price DESC) AS rank
+    FROM 
+        `semiotic-method-446214-n0.datalake.fipe_price_fact` fpf
+    JOIN 
+        `semiotic-method-446214-n0.datalake.model_vehicle_dim` mhd 
+        ON fpf.id_model_vehicle = mhd.id_model_vehicle
+    JOIN 
+        `semiotic-method-446214-n0.datalake.brand_dim` bd 
+        ON mhd.id_brand = bd.id_brand
+    JOIN 
+        `semiotic-method-446214-n0.datalake.year_dim` yd
+        ON fpf.id_year = yd.id_year
+)
+SELECT 
+    brand,
+    model,
+    car_detail,
+    year,
+    fipe_price AS highest_price
+FROM 
+    ranked_vehicles
+WHERE 
+    rank = 1
+ORDER BY 
+    highest_price DESC;
+
+
+6 - A consulta retorna a distribuição de preços de um modelo, agrupando por ano. Ele também fornece a contagem de registros, a média, o preço mínimo e o máximo.
+
+SELECT
+    bd.brand,
+    mhd.model,
+    yd.year,
+    COUNT(*) AS count,
+    AVG(fpf.fipe_price) AS avg_price,
+    MIN(fpf.fipe_price) AS min_price,
+    MAX(fpf.fipe_price) AS max_price
+FROM 
+    `semiotic-method-446214-n0.datalake.fipe_price_fact` fpf
+JOIN 
+    `semiotic-method-446214-n0.datalake.model_vehicle_dim` mhd
+    ON fpf.id_model_vehicle = mhd.id_model_vehicle
+JOIN 
+    `semiotic-method-446214-n0.datalake.brand_dim` bd
+    ON mhd.id_brand = bd.id_brand
+JOIN 
+    `semiotic-method-446214-n0.datalake.year_dim` yd
+    ON fpf.id_year = yd.id_year
+WHERE 
+    mhd.model = 'onix' -- Troque pelo modelo desejado
+GROUP BY
+    bd.brand, mhd.model, yd.year
+ORDER BY 
+    yd.year DESC;
+
+7 - o preço médio para o modelo "Corolla" para os diferentes anos.
+
+SELECT
+    mhd.model,
+    yd.year,
+    FORMAT('R$ %.2f', AVG(fpf.fipe_price)) AS average_price
+FROM 
+    `semiotic-method-446214-n0.datalake.fipe_price_fact` fpf
+JOIN 
+    `semiotic-method-446214-n0.datalake.model_vehicle_dim` mhd
+    ON fpf.id_model_vehicle = mhd.id_model_vehicle
+JOIN 
+    `semiotic-method-446214-n0.datalake.year_dim` yd
+    ON fpf.id_year = yd.id_year
+WHERE 
+    mhd.model = 'corolla'
+GROUP BY
+    mhd.model, yd.year
+ORDER BY
+    yd.year DESC;
+
+8 - Mostra o tipo, quantidade e porcentagem dos cambios de veiculos em 2025
+
+WITH total_registros AS (
+    SELECT COUNT(*) AS total
+    FROM `semiotic-method-446214-n0.datalake.fipe_price_fact` fpf
+    JOIN `semiotic-method-446214-n0.datalake.model_vehicle_dim` mhd 
+      ON fpf.id_model_vehicle = mhd.id_model_vehicle
+    JOIN `semiotic-method-446214-n0.datalake.year_dim` yd
+      ON fpf.id_year = yd.id_year
+    WHERE yd.year = 2025
+),
+tipo_cambio_count AS (
+    SELECT 
+        mhd.cambio,
+        COUNT(*) AS count_tipo_cambio
+    FROM 
+        `semiotic-method-446214-n0.datalake.fipe_price_fact` fpf
+    JOIN `semiotic-method-446214-n0.datalake.model_vehicle_dim` mhd 
+        ON fpf.id_model_vehicle = mhd.id_model_vehicle
+    JOIN `semiotic-method-446214-n0.datalake.year_dim` yd
+        ON fpf.id_year = yd.id_year
+    WHERE yd.year = 2025
+    GROUP BY mhd.cambio
+)
+SELECT 
+    tcc.cambio AS tipo_cambio,
+    tcc.count_tipo_cambio,
+    ROUND((tcc.count_tipo_cambio / tr.total) * 100, 2) AS porcentagem
+FROM 
+    tipo_cambio_count tcc
+JOIN 
+    total_registros tr ON TRUE  -- Aqui fazemos o join sem uma condição de coluna específica
+ORDER BY 
+    porcentagem DESC;
+
+9 - 10 carros mais antigos e seus anos
+
+SELECT 
+    bd.brand,
+    mhd.model,
+    yd.year
+FROM 
+    `semiotic-method-446214-n0.datalake.fipe_price_fact` fpf
+JOIN 
+    `semiotic-method-446214-n0.datalake.model_vehicle_dim` mhd 
+    ON fpf.id_model_vehicle = mhd.id_model_vehicle
+JOIN 
+    `semiotic-method-446214-n0.datalake.brand_dim` bd 
+    ON mhd.id_brand = bd.id_brand
+JOIN 
+    `semiotic-method-446214-n0.datalake.year_dim` yd
+    ON fpf.id_year = yd.id_year
+ORDER BY 
+    yd.year ASC  -- Ordena do carro mais antigo para o mais recente
+LIMIT 10;

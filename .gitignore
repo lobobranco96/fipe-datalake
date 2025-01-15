@@ -7,4 +7,4 @@ mnt/airflow/logs/
 mnt/airflow/dags/credential/google_credential.json
 credentials/google_credential.json
 services/conf/.credentials.conf
-mnt/airflow/spark_job/.env
+mnt\spark_job\.env

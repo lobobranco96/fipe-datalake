@@ -129,7 +129,7 @@ def extract_three(brand):
         """
         Cria uma URL completa para o veículo, combinando a marca, modelo, ano e detalhes.
 
-        - A URL é usada para acessar a página do veículo na Webmotors e obter informações detalhadas.
+        - A URL é usada para acessar a página do veículo e obter informações detalhadas.
 
         Parâmetros:
             brand (str): Nome da marca do veículo.

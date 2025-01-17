@@ -138,7 +138,7 @@ def extract_three(brand):
             car_detail (str): Detalhe do veículo (variante específica).
 
         Retorna:
-            str: URL formatada para o veículo específico na Webmotors.
+            str: URL formatada para o veículo específico
         """
 
         """Cria a URL do veículo"""

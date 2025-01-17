@@ -86,7 +86,7 @@ def extract_three(brand):
         - Usa BeautifulSoup para extrair o preço FIPE, que é retornado em formato de string.
 
         Parâmetros:
-            url (str): URL do veículo na Webmotors para obter o preço FIPE.
+            url (str): URL do veículo para obter o preço FIPE.
 
         Retorna:
             str or None: Preço FIPE do veículo (formato R$ XXX,XX) ou `None` caso não encontrado.

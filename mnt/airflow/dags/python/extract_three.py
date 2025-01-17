@@ -1,4 +1,4 @@
-import requests
+ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 import re
@@ -26,9 +26,9 @@ def extract_three(brand):
 
     def model_year(brand, model, vehicle_year):
         """
-        Busca os modelos de um veículo para um ano específico na Webmotors.
+        Busca os modelos de um veículo para um ano específico
 
-        - Faz uma requisição HTTP para a página do modelo e ano na Webmotors.
+        - Faz uma requisição HTTP para a página do modelo e ano
         - Usa BeautifulSoup para extrair a lista de modelos disponíveis para aquele ano e modelo.
 
         Parâmetros:

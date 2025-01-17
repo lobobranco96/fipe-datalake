@@ -26,9 +26,9 @@ def extract_two():
 
     def get_year(session, brand, model):
         """
-        Extrai os anos disponíveis para um modelo específico na Webmotors.
+        Extrai os anos disponíveis para um modelo específico
 
-        - Faz uma requisição HTTP para a página do modelo na Webmotors.
+        - Faz uma requisição HTTP para a página do modelo 
         - Usa BeautifulSoup para extrair a lista de anos disponíveis para o modelo.
 
         Parâmetros:
